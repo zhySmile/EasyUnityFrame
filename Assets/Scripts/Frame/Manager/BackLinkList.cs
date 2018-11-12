@@ -45,7 +45,7 @@
                 if (tmpNode.Data.ReduceTime(timer))
                 {
                     _sendBackMsg.ChangeEventId(tmpNode.Data.msgId);
-                    MsgCenter.Instance.SendMsg(_sendBackMsg);
+                    MsgCenter.Instance.SendToMsg(_sendBackMsg);
                     pNext.Next = tmpNode.Next;
                     tmpNode.Dispose();
                 }

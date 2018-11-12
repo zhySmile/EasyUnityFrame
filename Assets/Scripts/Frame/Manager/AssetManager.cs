@@ -16,7 +16,7 @@ namespace U3DEventFrame
 			}
 			else
 			{
-				MsgCenter.Instance.SendMsg(msg);
+				MsgCenter.Instance.SendToMsg(msg);
 			}
 		}
 

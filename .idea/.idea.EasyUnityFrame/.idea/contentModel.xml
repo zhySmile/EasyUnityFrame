@@ -13,7 +13,10 @@
             </e>
             <e p="Base" t="Include">
               <e p="AssetBase.cs" t="Include" />
+              <e p="AudioBase.cs" t="Include" />
+              <e p="CharaterBase.cs" t="Include" />
               <e p="CheckBackMsg.cs" t="Include" />
+              <e p="DBBase.cs" t="Include" />
               <e p="ManagerBase.cs" t="Include" />
               <e p="MonoBase.cs" t="Include" />
               <e p="MsgBase.cs" t="Include" />
@@ -21,7 +24,10 @@
             </e>
             <e p="Manager" t="Include">
               <e p="AssetManager.cs" t="Include" />
+              <e p="AudioManager.cs" t="Include" />
               <e p="BackLinkList.cs" t="Include" />
+              <e p="CharaterManager.cs" t="Include" />
+              <e p="DBManager.cs" t="Include" />
               <e p="MsgCenter.cs" t="Include" />
             </e>
           </e>

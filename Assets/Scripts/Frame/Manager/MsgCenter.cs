@@ -10,7 +10,7 @@ namespace U3DEventFrame
         LNetManager         = FrameTools.MsgSpan * 1,
         LUIManager          = FrameTools.MsgSpan * 2,
         LNPCManager         = FrameTools.MsgSpan * 3,
-        LCharatorManager    = FrameTools.MsgSpan * 4,
+        LCharaterManager    = FrameTools.MsgSpan * 4,
         LAssetManager       = FrameTools.MsgSpan * 5,
         LGameManager        = FrameTools.MsgSpan * 6,
         LDataManager        = FrameTools.MsgSpan * 7,
@@ -20,7 +20,7 @@ namespace U3DEventFrame
         NetManager          = FrameTools.MsgSpan * 12,
         UIManager           = FrameTools.MsgSpan * 13,
         NPCManager          = FrameTools.MsgSpan * 14,
-        CharatorManager     = FrameTools.MsgSpan * 15,
+        CharaterManager     = FrameTools.MsgSpan * 15,
         AssetManager        = FrameTools.MsgSpan * 16,
         GameManager         = FrameTools.MsgSpan * 17,
         DataManager         = FrameTools.MsgSpan * 18,
@@ -41,6 +41,8 @@ namespace U3DEventFrame
 #endif
 
             gameObject.AddComponent<AssetManager>();
+            gameObject.AddComponent<AudioManager>();
+            gameObject.AddComponent<CharaterManager>();
         }
 
         private void Update()
@@ -54,7 +56,7 @@ namespace U3DEventFrame
 #endif
         }
 
-        public void SendMsg(MsgBase tmpBody)
+        public void SendToMsg(MsgBase tmpBody)
         {
 #if USE_MutiMSGQueue
             if (tmpBody != null)
@@ -90,7 +92,8 @@ namespace U3DEventFrame
                         break;
                     case (ushort)ManagerID.NPCManager:
                         break;
-                    case (ushort)ManagerID.CharatorManager:
+                    case (ushort)ManagerID.CharaterManager:
+                        CharaterManager.Instance.ProcessEvent(tmpBody);
                         break;
                     case (ushort)ManagerID.AssetManager:
                         AssetManager.Instance.ProcessEvent(tmpBody);
@@ -100,6 +103,7 @@ namespace U3DEventFrame
                     case (ushort)ManagerID.DataManager:
                         break;
                     case (ushort)ManagerID.AudioManager:
+                        AudioManager.Instance.ProcessEvent(tmpBody);
                         break;
                     case (ushort)ManagerID.DBManager:
                         break;
