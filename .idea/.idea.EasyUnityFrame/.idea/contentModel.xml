@@ -17,6 +17,7 @@
               <e p="CharaterBase.cs" t="Include" />
               <e p="CheckBackMsg.cs" t="Include" />
               <e p="DBBase.cs" t="Include" />
+              <e p="GameBase.cs" t="Include" />
               <e p="ManagerBase.cs" t="Include" />
               <e p="MonoBase.cs" t="Include" />
               <e p="MsgBase.cs" t="Include" />
@@ -28,6 +29,7 @@
               <e p="BackLinkList.cs" t="Include" />
               <e p="CharaterManager.cs" t="Include" />
               <e p="DBManager.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
               <e p="MsgCenter.cs" t="Include" />
             </e>
           </e>

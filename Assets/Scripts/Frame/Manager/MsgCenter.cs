@@ -43,6 +43,8 @@ namespace U3DEventFrame
             gameObject.AddComponent<AssetManager>();
             gameObject.AddComponent<AudioManager>();
             gameObject.AddComponent<CharaterManager>();
+            gameObject.AddComponent<DBManager>();
+            gameObject.AddComponent<GameManager>();
         }
 
         private void Update()
@@ -99,6 +101,7 @@ namespace U3DEventFrame
                         AssetManager.Instance.ProcessEvent(tmpBody);
                         break;
                     case (ushort)ManagerID.GameManager:
+                        GameManager.Instance.ProcessEvent(tmpBody);
                         break;
                     case (ushort)ManagerID.DataManager:
                         break;
@@ -106,6 +109,7 @@ namespace U3DEventFrame
                         AudioManager.Instance.ProcessEvent(tmpBody);
                         break;
                     case (ushort)ManagerID.DBManager:
+                        DBManager.Instance.ProcessEvent(tmpBody);
                         break;
                     default:
                         break;
